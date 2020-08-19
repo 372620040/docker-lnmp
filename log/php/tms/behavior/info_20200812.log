@@ -1,0 +1,2 @@
+[2020-08-12 05:55:49.112135] behavior_info.INFO: wms logs add :  {"user_id":603,"type":"web_logout","message":"蒋尚君从Web退出系统","content":"shangjun.jiang@patpat.com","url":"http://tms.lan/auth/logout","ip":"172.27.0.1","country":"United States","created_at":"2020-08-12 05:55:49"} 
+[2020-08-12 05:55:57.171196] behavior_info.INFO: wms logs add :  {"user_id":603,"type":"web_login","message":"蒋尚君从Web登录系统","content":"shangjun.jiang@patpat.com","url":"http://tms.lan/auth/login","ip":"172.27.0.1","country":"United States","created_at":"2020-08-12 05:55:57"} 
