@@ -31,7 +31,6 @@ RUN  mkdir /data && cd /data    \
      &&  wget  http://cn2.php.net/distributions/php-7.2.15.tar.gz    \
      && tar -zxf php-7.2.15.tar.gz     \
      && cd php-7.2.15     \
-     && rm -rf /data/php-7.2.15.tar.gz    \
      && ./configure \
      --prefix=/usr/local/php  \
      --prefix=/usr/local/php   \
@@ -60,7 +59,7 @@ RUN  mkdir /data && cd /data    \
       && make && make install
 
 RUN  mkdir   /usr/local/php/etc \
-    && cp /data/php-7.2.15/php.ini-production /usr/local/php/etc/php.ini
+    && cp /data/php-7.2.15/php.ini-production /usr/local/php/etc/php.ini \
     && echo "export PATH=$PATH:/usr/local/php/bin/" >> /etc/profile \
     && source /etc/profile
 #COPY php.ini     /usr/local/php/etc/
