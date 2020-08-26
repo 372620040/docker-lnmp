@@ -22,12 +22,16 @@ RUN apt-get update && apt-get install -y \
         zlib1g-dev \
         libcurl4-openssl-dev \
         libxml2-dev \
+        libc-client-dev \
+        libkrb5-dev \
         --no-install-recommends && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-install -j$(nproc) \
         iconv mcrypt gettext curl mysqli pdo pdo_mysql zip \
         mbstring bcmath opcache xml simplexml sockets hash soap \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl  \
+    && docker-php-ext-install -j$(nproc) imap
 	
 #安装 PHP的Redis扩展
 ENV PHPREDIS_VERSION 3.1.6
